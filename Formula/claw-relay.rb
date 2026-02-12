@@ -2,7 +2,7 @@ class ClawRelay < Formula
   desc "Auto-approve Claude Code operations, save API credits"
   homepage "https://github.com/ethclawjack/claw-claude-code-relay"
   url "https://github.com/ethclawjack/claw-claude-code-relay/archive/refs/tags/v1.0.1.tar.gz"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  sha256 "1e4bd6194bf9cf3b1d56e039e2be5a2363ced134e707a603cac009912c7a9702"
   license "MIT"
   
   depends_on "node"
