@@ -9,7 +9,15 @@ class ClawRelay < Formula
   
   def install
     system "npm", "install", "--prefer-offline", "--no-audit"
-    bin.install "bin/claw-relay"
+    system "npm", "run", "build"
+    # Install to libexec (keeps everything together)
+    libexec.install Dir["*"]
+    # Create a node wrapper script
+    (bin/"claw-relay").write <<~EOS
+      #!/bin/bash
+      exec "#{Formula["node"].opt_bin}/node" "#{libexec}/bin/claw-relay" "$@"
+    EOS
+    (bin/"claw-relay").chmod 0o755
   end
   
   test do
