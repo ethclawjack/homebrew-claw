@@ -16,7 +16,7 @@ class ClawRelay < Formula
       #!/bin/bash
       exec "#{Formula["node"].opt_bin}/node" "#{libexec}/bin/claw-relay" "$@"
     EOS
-    bin.chmod_R 0o755
+    (bin/"claw-relay").chmod 0o755
   end
   
   test do
